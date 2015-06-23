@@ -1,0 +1,30 @@
+
+<game-thumb game-thumb-image="{{thumbnails[0].image}}">
+    <div name="overlay">
+        Overlay Content
+        <button>Orerlay</button>
+    </div>
+</game-thumb>
+
+<game-thumb game-thumb-image="{{thumbnails[1].image}}" game-thumb-type="{{thumbnails[1].type}}"
+        game-thumb-toggle="toggle.toggle">
+    <div name="overlay">
+        Overlay Content
+        <button ng-click="testOverlay(toggle);">Orerlay</button>
+    </div>
+    <div name="content">
+        <button ng-if="!toggle.toggle" ng-click="testContent(toggle);">Content</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
+    </div>
+</game-thumb>
+
+<game-thumb game-thumb-image="{{thumbnails[2].image}}" game-thumb-type="{{thumbnails[2].type}}">
+    <div name="overlay">
+        Overlay Content
+        <button>Orerlay</button>
+    </div>
+    <div name="content">
+        <button>Content</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
+    </div>
+</game-thumb>

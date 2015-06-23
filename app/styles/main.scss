@@ -1,0 +1,118 @@
+/* [sass, assets/css, main.scss] */
+/* line 16, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 20, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+body {
+  background: #444;
+  padding: 0;
+  margin: 0; }
+
+/* line 27, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.holder {
+  width: 300px;
+  padding: 15px;
+  display: inline-block; }
+@media all and (max-width: 800px) {
+  .holder {
+    width: 200px; } }
+@media all and (max-width: 600px) {
+  .holder {
+    width: 100%; } }
+
+/* line 39, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb {
+  position: relative;
+  display: inline-table;
+  width: 100%;
+  line-height: 0; }
+/* line 46, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb:hover:not(.game-thumb--static) .game-thumb__overlay, .game-thumb:hover:not(.game-thumb--static) .game-thumb__content, .game-thumb.active .game-thumb__overlay, .game-thumb.active .game-thumb__content {
+  visibility: visible; }
+/* line 50, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb:hover:not(.game-thumb--static) .game-thumb__img, .game-thumb.active .game-thumb__img {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
+/* line 55, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb:hover:not(.game-thumb--static) .game-thumb__overlay, .game-thumb.active .game-thumb__overlay {
+  z-index: 300;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
+/* line 61, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb:hover:not(.game-thumb--static) .game-thumb__content, .game-thumb.active .game-thumb__content {
+  z-index: 100; }
+/* line 65, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb:hover:not(.game-thumb--static) .game-thumb__holder, .game-thumb.active .game-thumb__holder {
+  z-index: 200; }
+
+/* line 77, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb--static:hover:not(.active) .game-thumb__overlay {
+  visibility: hidden; }
+/* line 82, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb--static .game-thumb__overlay {
+  z-index: 300; }
+/* line 86, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb--static .game-thumb__content {
+  z-index: 100;
+  background: transparent; }
+/* line 91, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb--static .game-thumb__holder {
+  z-index: 200; }
+/* line 94, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb--static .game-thumb__content {
+  visibility: visible;
+  margin-top: -81%;
+  position: relative; }
+
+/* line 101, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb__holder {
+  position: relative;
+  overflow: hidden; }
+
+/* line 106, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb__img {
+  width: 100%;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
+
+/* line 112, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb__overlay {
+  position: absolute;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  line-height: 16px;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
+
+/* line 130, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.game-thumb__content {
+  position: absolute;
+  background: #646464;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  padding: calc(81% + 15px) 15px 15px;
+  visibility: hidden;
+  line-height: 16px; }
+
+/*# sourceMappingURL=main.css.map */
