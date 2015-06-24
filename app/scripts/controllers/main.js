@@ -28,7 +28,8 @@ angular.module('gameThumbsApp')
                 type: 'lobby',
                 image: '/images/invisible-man.jpg'
             }
-        ]
+        ];
+
         $scope.testOverlay = function (toggle) {
             console.log('testOverlay', toggle);
             toggle.toggle = !toggle.toggle;

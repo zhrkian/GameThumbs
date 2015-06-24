@@ -1,9 +1,13 @@
-<div class="holder" ng-multi-transclude-controller>
-    <div name="game-thumb" class="game-thumb game-thumb--{{gameThumbType}}">
-        <div class="game-thumb__holder">
-            <img class="game-thumb__img" src="{{gameThumbImage}}" alt=""/>
-            <div ng-multi-transclude="overlay" class="game-thumb__overlay"></div>
-        </div>
-        <div ng-multi-transclude="content" class="game-thumb__content"></div>
+<div name="game-thumb" class="thumbnail {{gameThumbType}}" ng-multi-transclude-controller>
+
+    <div class="thumbnail__holder">
+
+        <img class="thumbnail__img" src="{{gameThumb.image}}" alt=""/>
+
+        <div class="thumbnail__overlay" ng-multi-transclude="overlay"></div>
+
     </div>
+
+    <div class="thumbnail__content" ng-multi-transclude="content"></div>
+
 </div>

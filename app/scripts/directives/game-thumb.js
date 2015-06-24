@@ -13,27 +13,44 @@ angular.module('gameThumbsApp')
             transclude: true,
             templateUrl: '/views/game-thumb.html',
             scope: {
-                gameThumbType: '@',
-                gameThumbImage: '@',
-                gameThumbToggle: '='
+                gameThumb: '='
             },
-            link: function postLink(scope, element, attrs) {
-                var gameThumb = element[0].querySelector('.game-thumb');
-                scope.gameThumbToggle = false;
+            link: function postLink(scope, element) {
+                var thumbnail = element[0].querySelector('.thumbnail'),
+                    hoveredElement = thumbnail;
 
-                if (!scope.gameThumbType) {
-                    var gameThumbContent = element[0].querySelector('.game-thumb__content');
-                    gameThumbContent.setAttribute('style', 'display: none !important;')
+                function toggleOverlay (toggle) {
+                    var overlay = toggle ? 'add' : 'remove';
+
+                    thumbnail.classList[overlay]('thumbnail--toggle-overlay');
+
+                    if (scope.gameThumb.contentOverlayed) {
+                        thumbnail.classList[overlay]('thumbnail--toggle-content');
+                    }
                 }
 
-                scope.$watch(function () {
-                    return scope.gameThumbToggle;
-                }, function () {
-                    console.log(scope.gameThumbToggle);
-                    scope.gameThumbToggle ?
-                        gameThumb.classList.add('active') :
-                        gameThumb.classList.remove('active');
-                }, true);
+                if (scope.gameThumb.contentOverlayed){
+                    element[0].classList.add('thumbnail--content--overlayed');
+                }
+
+                if (scope.gameThumb.toggle === 'image') {
+                    hoveredElement = hoveredElement.querySelector('.thumbnail__holder');
+                }
+
+                if (typeof scope.gameThumb.toggle === 'string') {
+                    hoveredElement.addEventListener('mouseenter', function () {
+                        toggleOverlay(true);
+                    });
+                    hoveredElement.addEventListener('mouseleave', function () {
+                        toggleOverlay(false);
+                    });
+                } else {
+                    scope.$watch(function () {
+                        return scope.gameThumb.toggle;
+                    }, function () {
+                        toggleOverlay(scope.gameThumb.toggle);
+                    }, true);
+                }
             }
         };
 

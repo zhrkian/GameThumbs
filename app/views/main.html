@@ -1,30 +1,75 @@
+<div class="holder">
+    <p>вкл оверлей по ховеру на всем тамбнейле с контентом (контента нет)</p>
+    <div game-thumb="{
+        image: '/images/invisible-man.jpg',
+        toggle: 'image',
+        contentOverlayed: false
+    }">
 
-<game-thumb game-thumb-image="{{thumbnails[0].image}}">
-    <div name="overlay">
-        Overlay Content
-        <button>Orerlay</button>
+        <p name="overlay">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere m
+        </p>
     </div>
-</game-thumb>
+</div>
 
-<game-thumb game-thumb-image="{{thumbnails[1].image}}" game-thumb-type="{{thumbnails[1].type}}"
-        game-thumb-toggle="toggle.toggle">
-    <div name="overlay">
-        Overlay Content
-        <button ng-click="testOverlay(toggle);">Orerlay</button>
-    </div>
-    <div name="content">
-        <button ng-if="!toggle.toggle" ng-click="testContent(toggle);">Content</button>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
-    </div>
-</game-thumb>
+<div class="holder">
+    <p>вкл оверлей только по ховеру на картинке</p>
+    <div game-thumb="{
+        image: '/images/invisible-man.jpg',
+        toggle: 'image',
+        contentOverlayed: false
+    }">
 
-<game-thumb game-thumb-image="{{thumbnails[2].image}}" game-thumb-type="{{thumbnails[2].type}}">
-    <div name="overlay">
-        Overlay Content
-        <button>Orerlay</button>
+        <p name="overlay">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere m
+        </p>
+        <p name="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
     </div>
-    <div name="content">
-        <button>Content</button>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
+</div>
+
+<div class="holder">
+    <p>вкл оверлей по ховеру на всем тамбнейле с контентом (контент есть)</p>
+    <div game-thumb="{
+        image: '/images/invisible-man.jpg',
+        toggle: 'all',
+        contentOverlayed: false
+    }">
+
+        <p name="overlay">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere m
+        </p>
+        <p name="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
     </div>
-</game-thumb>
+</div>
+
+<div class="holder">
+    <p>вкл оверлей и контент по ховеру на тамбнейле</p>
+    <div game-thumb="{
+        image: '/images/invisible-man.jpg',
+        toggle: 'image',
+        contentOverlayed: true
+    }">
+
+        <p name="overlay">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere m
+        </p>
+        <p name="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
+    </div>
+</div>
+
+<div class="holder">
+    <p>вкл оверлей по событию</p>
+    <div game-thumb="{
+        image: thumbnails[0].image,
+        toggle: thumbnails[0].toggle
+    }">
+
+        <p name="overlay">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere m
+        </p>
+        <div name="content">
+            <p><button ng-click="testContent(thumbnails[0])">Toggle</button></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate eaque esse facere molestiae obcaecati possimus suscipit veniam. Adipisci dignissimos, doloremque eos facere iusto laudantium quas tempora? Aperiam, assumenda, eos?</p>
+        </div>
+    </div>
+</div>

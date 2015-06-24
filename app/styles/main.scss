@@ -23,62 +23,52 @@ body {
   .holder {
     width: 100%; } }
 
-/* line 39, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb {
+/* line 154, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail {
   position: relative;
   display: inline-table;
   width: 100%;
   line-height: 0; }
-/* line 46, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb:hover:not(.game-thumb--static) .game-thumb__overlay, .game-thumb:hover:not(.game-thumb--static) .game-thumb__content, .game-thumb.active .game-thumb__overlay, .game-thumb.active .game-thumb__content {
-  visibility: visible; }
-/* line 50, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb:hover:not(.game-thumb--static) .game-thumb__img, .game-thumb.active .game-thumb__img {
-  -webkit-transition: 300ms;
-  transition: 300ms;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1); }
-/* line 55, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb:hover:not(.game-thumb--static) .game-thumb__overlay, .game-thumb.active .game-thumb__overlay {
-  z-index: 300;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1; }
-/* line 61, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb:hover:not(.game-thumb--static) .game-thumb__content, .game-thumb.active .game-thumb__content {
+/* line 161, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-overlay .thumbnail__overlay {
+  visibility: visible !important;
+  opacity: 1 !important; }
+/* line 165, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-overlay .thumbnail__img {
+  -webkit-transition: 300ms !important;
+  transition: 300ms !important;
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important; }
+/* line 172, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-content .thumbnail__content {
+  visibility: visible !important;
+  opacity: 1 !important; }
+/* line 179, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__holder {
+  z-index: 200; }
+/* line 182, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__content {
   z-index: 100; }
-/* line 65, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb:hover:not(.game-thumb--static) .game-thumb__holder, .game-thumb.active .game-thumb__holder {
-  z-index: 200; }
+/* line 185, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__content {
+  position: absolute;
+  background: #646464;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  padding: calc(81% + 15px) 15px 15px;
+  line-height: 16px;
+  visibility: hidden;
+  opacity: 0; }
 
-/* line 77, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb--static:hover:not(.active) .game-thumb__overlay {
-  visibility: hidden; }
-/* line 82, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb--static .game-thumb__overlay {
-  z-index: 300; }
-/* line 86, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb--static .game-thumb__content {
-  z-index: 100;
-  background: transparent; }
-/* line 91, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb--static .game-thumb__holder {
-  z-index: 200; }
-/* line 94, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb--static .game-thumb__content {
-  visibility: visible;
-  margin-top: -81%;
-  position: relative; }
-
-/* line 101, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb__holder {
+/* line 199, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail__holder {
   position: relative;
   overflow: hidden; }
 
-/* line 106, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb__img {
+/* line 204, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail__img {
   width: 100%;
   -webkit-transition: 300ms;
   transition: 300ms;
@@ -86,8 +76,8 @@ body {
   -ms-transform: scale(1);
   transform: scale(1); }
 
-/* line 112, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb__overlay {
+/* line 210, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail__overlay {
   position: absolute;
   z-index: 300;
   background: rgba(0, 0, 0, 0.3);
@@ -104,15 +94,10 @@ body {
   -ms-transform: scale(1.1);
   transform: scale(1.1); }
 
-/* line 130, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
-.game-thumb__content {
-  position: absolute;
-  background: #646464;
-  top: -15px;
-  left: -15px;
-  width: calc(100% + 30px);
-  padding: calc(81% + 15px) 15px 15px;
-  visibility: hidden;
-  line-height: 16px; }
+/* line 228, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail__content {
+  line-height: 16px;
+  -webkit-transition: 300ms;
+  transition: 300ms; }
 
 /*# sourceMappingURL=main.css.map */
