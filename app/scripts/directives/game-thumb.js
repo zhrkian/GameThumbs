@@ -41,7 +41,8 @@ angular.module('gameThumbsApp')
                     hoveredElement.addEventListener('mouseenter', function () {
                         toggleOverlay(true);
                     });
-                    hoveredElement.addEventListener('mouseleave', function () {
+                    var leaveElement = scope.gameThumb.contentOverlayed ? thumbnail : hoveredElement;
+                    leaveElement.addEventListener('mouseleave', function () {
                         toggleOverlay(false);
                     });
                 } else {
