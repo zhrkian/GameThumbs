@@ -1,116 +1,103 @@
-$icon-font-path: '../fonts/';
-$font-size-base: 16px;
-$line-height-base: 16px;
-
-$z-index-bottom: 100;
-$z-index-middle: 200;
-$z-index-top: 300;
-
-$thumb-overlay-speed: 300ms;
-$thumb-zoom: 1.1;
-
-
-//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-
-
+/* [sass, assets/css, main.scss] */
+/* line 16, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 * {
-    box-sizing: border-box;
-}
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
+/* line 20, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 body {
-    background: #444;
-    padding: 0;
-    margin: 0;
-}
+  background: #444;
+  padding: 0;
+  margin: 0; }
 
-
+/* line 27, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .holder {
-    width: 300px;
-    padding: 15px;
-    display: inline-block;
-    @media all and (max-width: 800px){
-        width: 200px;
-    }
-    @media all and (max-width: 600px){
-        width: 100%;
-    }
-}
+  width: 300px;
+  padding: 15px;
+  display: inline-block; }
+@media all and (max-width: 800px) {
+  .holder {
+    width: 200px; } }
+@media all and (max-width: 600px) {
+  .holder {
+    width: 100%; } }
 
+/* line 154, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .thumbnail {
-    position: relative;
-    display: inline-table;
-    width: 100%;
-    line-height: 0;
+  position: relative;
+  display: inline-table;
+  width: 100%;
+  line-height: 0; }
+/* line 161, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-overlay .thumbnail__overlay {
+  visibility: visible !important;
+  opacity: 1 !important; }
+/* line 165, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-overlay .thumbnail__img {
+  -webkit-transition: 300ms !important;
+  transition: 300ms !important;
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important; }
+/* line 172, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--toggle-content .thumbnail__content {
+  visibility: visible !important;
+  opacity: 1 !important; }
+/* line 179, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__holder {
+  z-index: 200; }
+/* line 182, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__content {
+  z-index: 100; }
+/* line 185, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
+.thumbnail--content--overlayed .thumbnail__content {
+  position: absolute;
+  background: #646464;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  padding: calc(81% + 15px) 15px 15px;
+  line-height: 16px;
+  visibility: hidden;
+  opacity: 0; }
 
-    &--toggle-overlay {
-        .thumbnail__overlay {
-            visibility: visible!important;
-            opacity: 1!important;
-        }
-        .thumbnail__img {
-            transition: $thumb-overlay-speed!important;
-            transform: scale($thumb-zoom)!important;
-        }
-    }
-
-    &--toggle-content {
-        .thumbnail__content {
-            visibility: visible!important;
-            opacity: 1!important;
-        }
-    }
-
-    &--content--overlayed {
-        .thumbnail__holder {
-            z-index: $z-index-middle;
-        }
-        .thumbnail__content {
-            z-index: $z-index-bottom;
-        }
-        .thumbnail__content {
-            position: absolute;
-            background: rgb(100,100,100);
-            top: -15px;
-            left: -15px;
-            width: calc(100% + 30px);
-            padding: calc(81% + 15px) 15px 15px;
-            line-height: $line-height-base;
-            visibility: hidden;
-            opacity: 0;
-        }
-    }
-}
-
+/* line 199, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .thumbnail__holder {
-    position: relative;
-    overflow: hidden;
-}
+  position: relative;
+  overflow: hidden; }
 
+/* line 204, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .thumbnail__img {
-    width: 100%;
-    transition: $thumb-overlay-speed;
-    transform: scale(1);
-}
+  width: 100%;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
 
+/* line 210, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .thumbnail__overlay {
-    position: absolute;
-    z-index: $z-index-top;
-    background: rgba(0,0,0,0.3);
+  position: absolute;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  line-height: 16px;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
 
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    visibility: hidden;
-
-    line-height: $line-height-base;
-
-    opacity: 0;
-    transition: $thumb-overlay-speed;
-    transform: scale($thumb-zoom);
-}
-
+/* line 228, /Users/ftroitsky/Documents/Webdev/sputnik-test/assets/css/main.scss */
 .thumbnail__content {
-    line-height: $line-height-base;
-    transition: $thumb-overlay-speed;
-}
+  line-height: 16px;
+  -webkit-transition: 300ms;
+  transition: 300ms; }
+
+/*# sourceMappingURL=main.css.map */
